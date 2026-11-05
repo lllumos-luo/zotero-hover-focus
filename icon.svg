@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>Hover Focus</title>
+  <rect width="512" height="512" rx="96" fill="#002FA7"/>
+  <g fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="94" font-weight="700" text-anchor="middle">
+    <text x="256" y="238">Hover</text>
+    <text x="256" y="342">Focus</text>
+  </g>
+</svg>

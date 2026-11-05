@@ -1,0 +1,19 @@
+{
+  "addons": {
+    "hover-focus@local": {
+      "updates": [
+        {
+          "version": "0.3.1",
+          "update_link": "https://github.com/lllumos-luo/zotero-hover-focus/releases/download/v0.3.1/hover-focus-0.3.1.xpi",
+          "update_hash": "sha256:683ab1bba4f1b1b42ad32b67230c0fcd56c1ae5db558e1bd12181fe38c6e60d4",
+          "applications": {
+            "zotero": {
+              "strict_min_version": "10.0",
+              "strict_max_version": "10.*"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

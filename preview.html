@@ -1,0 +1,30 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hover Focus settings layout check</title>
+<style>
+  body {margin:0;background:#edf0f6;font-family:system-ui;}
+  /* Deliberately hostile host defaults: our controls must remain horizontal. */
+  button {display:block;width:100%;font:20px system-ui;padding:15px;background:none;border:0;}
+</style>
+<body>
+<script src="locales.js"></script>
+<script src="ui.js"></script>
+<script>
+  const language=new URLSearchParams(location.search).get('lang')==='en'?'en':'zh';
+  const prefs={dim:35,tint:12,color:'#ffd54a',delay:200,keep:true,unit:'sentence',doubleClick:'highlight',annotationColor:'#ffd400',language};
+  function render(){
+    document.getElementById('hover-focus-settings')?.remove();
+    const lang=prefs.language==='auto'?'zh':prefs.language;
+    const panel=HoverFocusUI.build(document,{t:key=>HoverFocusLocales[lang][key],pref:key=>prefs[key],set:(key,value)=>{prefs[key]=value;if(key==='language')render();},close:()=>{},language:lang});
+    panel.style.left='32px';panel.style.top='24px';panel.style.maxHeight='calc(100vh - 48px)';document.body.append(panel);
+  }
+  render();
+  requestAnimationFrame(()=>{
+    const groups=[...document.querySelectorAll('.hf-segments')];
+    const horizontal=groups.every(g=>new Set([...g.children].map(b=>Math.round(b.getBoundingClientRect().top))).size===1);
+    const noOverflow=groups.every(g=>g.scrollWidth<=g.clientWidth+1);
+    const done=getComputedStyle(document.querySelector('.hf-done')).backgroundColor==='rgb(0, 47, 167)';
+    document.body.dataset.layoutCheck=horizontal&&noOverflow&&done?'pass':'fail';
+  });
+</script>
