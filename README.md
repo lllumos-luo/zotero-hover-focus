@@ -2,7 +2,7 @@
 
 **A Zotero PDF reader plugin for hover-based sentence and line focus.** Keep the text under your pointer clear, dim surrounding content, and optionally save native annotations with a double-click.
 
-**Zotero 悬停聚焦阅读插件：**鼠标停在整句或整行上时保持当前内容清晰，其余正文变暗；可选双击保存高亮或下划线，支持中英双语界面。
+**Zotero 悬停聚焦阅读插件：** 鼠标停在整句或整行上时保持当前内容清晰，其余正文变暗；可选双击保存高亮或下划线，支持中英双语界面。
 
 [English guide below](#install) · [简体中文完整说明](README.zh-CN.md)
 
